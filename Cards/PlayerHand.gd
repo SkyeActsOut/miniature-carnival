@@ -1,1 +1,1 @@
-const cardList = ["Yellow_Octo", "Yellow_Octo", "Yellow_Octo"]
+const cardList = ["Yellow_Octo", "Yellow_Octo", "Yellow_Octo", "Yellow_Octo", "Yellow_Octo", "Yellow_Octo"]

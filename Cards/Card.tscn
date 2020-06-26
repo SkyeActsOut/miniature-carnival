@@ -12,172 +12,180 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Card" type="Sprite" parent="."]
+[node name="Card_Parent" type="Node2D" parent="."]
+
+[node name="Card" type="Sprite" parent="Card_Parent"]
 centered = false
 
-[node name="Border" type="Sprite" parent="."]
+[node name="Border" type="Sprite" parent="Card_Parent"]
 texture = ExtResource( 2 )
 centered = false
 
-[node name="Bars" type="VBoxContainer" parent="."]
+[node name="Bars" type="VBoxContainer" parent="Card_Parent"]
 margin_right = 250.0
 margin_bottom = 350.0
 
-[node name="TopGap" type="MarginContainer" parent="Bars"]
+[node name="TopGap" type="MarginContainer" parent="Card_Parent/Bars"]
 margin_right = 250.0
 margin_bottom = 25.0
 rect_min_size = Vector2( 0, 25 )
 
-[node name="TopBar" type="HBoxContainer" parent="Bars"]
+[node name="TopBar" type="HBoxContainer" parent="Card_Parent/Bars"]
 margin_top = 29.0
 margin_right = 250.0
 margin_bottom = 43.0
 
-[node name="LeftGap" type="MarginContainer" parent="Bars/TopBar"]
+[node name="LeftGap" type="MarginContainer" parent="Card_Parent/Bars/TopBar"]
 margin_right = 25.0
 margin_bottom = 14.0
 rect_min_size = Vector2( 25, 0 )
 
-[node name="Name" type="MarginContainer" parent="Bars/TopBar"]
+[node name="Name" type="MarginContainer" parent="Card_Parent/Bars/TopBar"]
 margin_left = 29.0
 margin_right = 107.0
 margin_bottom = 14.0
 
-[node name="CenterContainer" type="CenterContainer" parent="Bars/TopBar/Name"]
+[node name="CenterContainer" type="CenterContainer" parent="Card_Parent/Bars/TopBar/Name"]
 margin_right = 78.0
 margin_bottom = 14.0
 
-[node name="Name" type="Label" parent="Bars/TopBar/Name/CenterContainer"]
+[node name="Name" type="Label" parent="Card_Parent/Bars/TopBar/Name/CenterContainer"]
 modulate = Color( 0, 0, 0, 1 )
 self_modulate = Color( 0, 0, 0, 1 )
 margin_right = 78.0
 margin_bottom = 14.0
 text = "OWOSENSEI"
 
-[node name="MidGap" type="MarginContainer" parent="Bars/TopBar"]
+[node name="MidGap" type="MarginContainer" parent="Card_Parent/Bars/TopBar"]
 margin_left = 111.0
 margin_right = 209.0
 margin_bottom = 14.0
 size_flags_horizontal = 3
 
-[node name="Cost" type="MarginContainer" parent="Bars/TopBar"]
+[node name="Cost" type="MarginContainer" parent="Card_Parent/Bars/TopBar"]
 margin_left = 213.0
 margin_right = 221.0
 margin_bottom = 14.0
 
-[node name="CenterContainer" type="CenterContainer" parent="Bars/TopBar/Cost"]
+[node name="CenterContainer" type="CenterContainer" parent="Card_Parent/Bars/TopBar/Cost"]
 margin_right = 8.0
 margin_bottom = 14.0
 
-[node name="Cost" type="Label" parent="Bars/TopBar/Cost/CenterContainer"]
+[node name="Cost" type="Label" parent="Card_Parent/Bars/TopBar/Cost/CenterContainer"]
 modulate = Color( 0, 0, 0, 1 )
 margin_right = 8.0
 margin_bottom = 14.0
 text = "1"
 
-[node name="MarginContainer" type="MarginContainer" parent="Bars/TopBar"]
+[node name="MarginContainer" type="MarginContainer" parent="Card_Parent/Bars/TopBar"]
 margin_left = 225.0
 margin_right = 250.0
 margin_bottom = 14.0
 rect_min_size = Vector2( 25, 0 )
 
-[node name="T_MidGap" type="MarginContainer" parent="Bars"]
+[node name="T_MidGap" type="MarginContainer" parent="Card_Parent/Bars"]
 margin_top = 47.0
 margin_right = 250.0
 margin_bottom = 246.0
 size_flags_vertical = 3
 
-[node name="CardMiddle" type="HBoxContainer" parent="Bars"]
+[node name="CardMiddle" type="HBoxContainer" parent="Card_Parent/Bars"]
 margin_top = 250.0
 margin_right = 250.0
 margin_bottom = 264.0
 
-[node name="LeftGap" type="MarginContainer" parent="Bars/CardMiddle"]
+[node name="LeftGap" type="MarginContainer" parent="Card_Parent/Bars/CardMiddle"]
 margin_right = 25.0
 margin_bottom = 14.0
 rect_min_size = Vector2( 25, 0 )
 
-[node name="Text" type="MarginContainer" parent="Bars/CardMiddle"]
+[node name="Text" type="MarginContainer" parent="Card_Parent/Bars/CardMiddle"]
 margin_left = 29.0
 margin_right = 107.0
 margin_bottom = 14.0
 
-[node name="CenterContainer" type="CenterContainer" parent="Bars/CardMiddle/Text"]
+[node name="CenterContainer" type="CenterContainer" parent="Card_Parent/Bars/CardMiddle/Text"]
 margin_right = 78.0
 margin_bottom = 14.0
 
-[node name="Text" type="Label" parent="Bars/CardMiddle/Text/CenterContainer"]
+[node name="Text" type="Label" parent="Card_Parent/Bars/CardMiddle/Text/CenterContainer"]
 modulate = Color( 0, 0, 0, 1 )
 margin_right = 78.0
 margin_bottom = 14.0
 text = "OWOSENSEI"
 
-[node name="MidGap" type="MarginContainer" parent="Bars/CardMiddle"]
+[node name="MidGap" type="MarginContainer" parent="Card_Parent/Bars/CardMiddle"]
 margin_left = 111.0
 margin_right = 250.0
 margin_bottom = 14.0
 size_flags_horizontal = 3
 
-[node name="B_MidGap" type="MarginContainer" parent="Bars"]
+[node name="B_MidGap" type="MarginContainer" parent="Card_Parent/Bars"]
 margin_top = 268.0
 margin_right = 250.0
 margin_bottom = 308.0
 rect_min_size = Vector2( 0, 40 )
 
-[node name="BottomBar" type="HBoxContainer" parent="Bars"]
+[node name="BottomBar" type="HBoxContainer" parent="Card_Parent/Bars"]
 margin_top = 312.0
 margin_right = 250.0
 margin_bottom = 326.0
 
-[node name="LeftGap" type="MarginContainer" parent="Bars/BottomBar"]
+[node name="LeftGap" type="MarginContainer" parent="Card_Parent/Bars/BottomBar"]
 margin_right = 25.0
 margin_bottom = 14.0
 rect_min_size = Vector2( 25, 0 )
 
-[node name="Stats" type="MarginContainer" parent="Bars/BottomBar"]
+[node name="Stats" type="MarginContainer" parent="Card_Parent/Bars/BottomBar"]
 margin_left = 29.0
 margin_right = 50.0
 margin_bottom = 14.0
 
-[node name="CenterContainer" type="CenterContainer" parent="Bars/BottomBar/Stats"]
+[node name="CenterContainer" type="CenterContainer" parent="Card_Parent/Bars/BottomBar/Stats"]
 margin_right = 21.0
 margin_bottom = 14.0
 
-[node name="Stats" type="Label" parent="Bars/BottomBar/Stats/CenterContainer"]
+[node name="Stats" type="Label" parent="Card_Parent/Bars/BottomBar/Stats/CenterContainer"]
 modulate = Color( 0, 0, 0, 1 )
 margin_right = 21.0
 margin_bottom = 14.0
 text = "1/1"
 
-[node name="MidGap" type="MarginContainer" parent="Bars/BottomBar"]
+[node name="MidGap" type="MarginContainer" parent="Card_Parent/Bars/BottomBar"]
 margin_left = 54.0
 margin_right = 209.0
 margin_bottom = 14.0
 size_flags_horizontal = 3
 
-[node name="Health" type="MarginContainer" parent="Bars/BottomBar"]
+[node name="Health" type="MarginContainer" parent="Card_Parent/Bars/BottomBar"]
 margin_left = 213.0
 margin_right = 221.0
 margin_bottom = 14.0
 
-[node name="CenterContainer" type="CenterContainer" parent="Bars/BottomBar/Health"]
+[node name="CenterContainer" type="CenterContainer" parent="Card_Parent/Bars/BottomBar/Health"]
 margin_right = 8.0
 margin_bottom = 14.0
 
-[node name="Health" type="Label" parent="Bars/BottomBar/Health/CenterContainer"]
+[node name="Health" type="Label" parent="Card_Parent/Bars/BottomBar/Health/CenterContainer"]
 modulate = Color( 0, 0, 0, 1 )
 margin_right = 8.0
 margin_bottom = 14.0
 text = "3"
 
-[node name="MarginContainer" type="MarginContainer" parent="Bars/BottomBar"]
+[node name="MarginContainer" type="MarginContainer" parent="Card_Parent/Bars/BottomBar"]
 margin_left = 225.0
 margin_right = 250.0
 margin_bottom = 14.0
 rect_min_size = Vector2( 25, 0 )
 
-[node name="MarginContainer" type="MarginContainer" parent="Bars"]
+[node name="MarginContainer" type="MarginContainer" parent="Card_Parent/Bars"]
 margin_top = 330.0
 margin_right = 250.0
 margin_bottom = 350.0
 rect_min_size = Vector2( 0, 20 )
+
+[node name="Focus" type="TextureButton" parent="."]
+margin_right = 250.0
+margin_bottom = 350.0
+[connection signal="mouse_entered" from="Focus" to="." method="_on_Focus_mouse_entered"]
+[connection signal="mouse_exited" from="Focus" to="." method="_on_Focus_mouse_exited"]
