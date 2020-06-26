@@ -1,0 +1,14 @@
+{
+
+    "name": "Yellow_Octo",
+    "type": "Mutant",
+    "attack_power": 2,
+    "attack_speed": 10,
+    "speed": 3,
+    "defense": 10,
+    "shield_durability": 2,
+    "health": 10,
+    "lives": 10,
+    "movement": "123"
+
+}

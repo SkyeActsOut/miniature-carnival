@@ -2,13 +2,15 @@ extends MarginContainer
 
 
 # Declare member variables here. Examples:
-onready var CardDatabase = preload ("res://Cards/CardDatabase.gd")
-var cardName = "Blank"
-onready var cardInfo = CardDatabase.DATA[CardDatabase.get(cardName)]
-onready var CardImg = str("res://Cards/Assets/", cardInfo[0], "/", cardName, ".png")
+var cardName = "Yellow_Octo"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	var CardDatabase = get_node ("/root/GameScene/CardDatabase")
+	print (CardDatabase.DATA)
+	var cardInfo = CardDatabase.DATA[cardName]
+	var CardImg = str("res://Cards/Assets/Backgrounds/", cardName, ".png")
+	
 	print(cardInfo)
 	print (CardImg)
 	var cardSize = rect_size
@@ -16,15 +18,13 @@ func _ready():
 	$Card.texture = load (CardImg)
 	$Card.scale *= cardSize/$Card.texture.get_size()
 	
-	var attack = cardInfo[1]
-	var retaliation = cardInfo[2]
-	var health = cardInfo[3]
-	var cost = cardInfo[4]
-	var specialText = cardInfo [7]
+	var attack = cardInfo.attack_power
+	var attack_speed = cardInfo.attack_speed
+	var health = cardInfo.health
+	var cost = "NA"
 	$Bars/TopBar/Name/CenterContainer/Name.text = str(cardName)
 	$Bars/TopBar/Cost/CenterContainer/Cost.text = str(cost)
-	$Bars/CardMiddle/Text/CenterContainer/Text.text = str(specialText)
-	$Bars/BottomBar/Stats/CenterContainer/Stats.text = str(attack, "/", retaliation)
+	$Bars/BottomBar/Stats/CenterContainer/Stats.text = str(attack, "@", attack_speed)
 	$Bars/BottomBar/Health/CenterContainer/Health.text = str(health)
 	
 	
