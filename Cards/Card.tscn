@@ -4,8 +4,8 @@
 [ext_resource path="res://Cards/Assets/Borders/TestBorder.png" type="Texture" id=2]
 
 [node name="CardBase" type="MarginContainer"]
-margin_right = 250.0
-margin_bottom = 350.0
+margin_right = 350.0
+margin_bottom = 490.0
 rect_pivot_offset = Vector2( 125, 175 )
 script = ExtResource( 1 )
 __meta__ = {
@@ -185,7 +185,7 @@ margin_bottom = 350.0
 rect_min_size = Vector2( 0, 20 )
 
 [node name="Focus" type="TextureButton" parent="."]
-margin_right = 250.0
-margin_bottom = 350.0
+margin_right = 350.0
+margin_bottom = 490.0
 [connection signal="mouse_entered" from="Focus" to="." method="_on_Focus_mouse_entered"]
 [connection signal="mouse_exited" from="Focus" to="." method="_on_Focus_mouse_exited"]

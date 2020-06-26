@@ -11,11 +11,17 @@ var elapsed = 0
 var start_pos
 var anim 
 
+# other vars
+var CardDatabase
+var InspectArea
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	start_pos = rect_position
 	
-	var CardDatabase = get_node ("/root/GameScene/CardDatabase")
+	InspectArea = get_node ("/root/GameScene/InspectArea")
+	
+	CardDatabase = get_node ("/root/GameScene/CardDatabase")
 	print (CardDatabase.DATA)
 	var cardInfo = CardDatabase.DATA[cardName]
 	var CardImg = str("res://Cards/Assets/Backgrounds/", cardName, ".png")
@@ -39,20 +45,33 @@ func _ready():
 	set_process(true)
 
 func _on_Focus_mouse_entered():
-	offset = Vector2 (0, -35)
+	#Position
+	offset = Vector2 (0, -45)
 	$Card_Parent.position = offset
+	
+	#Animation
 	elapsed = 0
 	destination = start_pos + offset
 	time = 0.15
 	anim = true
+	
+	InspectArea.inspect (self)
+	
+
 
 func _on_Focus_mouse_exited():
+	#Position
 	offset = Vector2 (0, 0)
 	$Card_Parent.position = offset
+	
+	#Animation
 	elapsed = 0
 	destination = start_pos + offset
 	time = 0.15
 	anim = true
+	
+	InspectArea.inspect (null)
+
 	
 func _process(delta):
 	if (anim):

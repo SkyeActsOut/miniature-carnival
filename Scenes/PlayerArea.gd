@@ -1,6 +1,6 @@
 extends Node2D
 
-const CardSize = Vector2 (125, 175)
+const CardSize = Vector2 (175, 245)
 const CardBase = preload ("res://Cards/Card.tscn")
 const PlayerHand = preload ("res://Cards/PlayerHand.gd")
 var cardSelected = []
@@ -8,7 +8,7 @@ onready var deckSize = PlayerHand.cardList.size()
 
 onready var screen_size = Vector2 (1920, 1080)
 
-onready var CenteredCardOval = screen_size*Vector2(0.5, 1.45)
+onready var CenteredCardOval = screen_size*Vector2(0.5, 1.525)
 onready var Horizontal_Radius = get_viewport().size.x * 0.45
 onready var Vertical_Radius = get_viewport().size.y * 0.4
 var angle = deg2rad(90) - 0.3
@@ -24,14 +24,14 @@ func _ready():
 		
 # Places a random card from the deck
 func drawCard ():
-	var new_card = CardBase.instance()
-	cardSelected = randi() % deckSize
-	new_card.cardName = PlayerHand.cardList[cardSelected]
-	AngleVector = Vector2(Horizontal_Radius * cos(angle), - Vertical_Radius * sin(angle))
-	new_card.rect_position = CenteredCardOval + AngleVector - new_card.rect_size/2
-	new_card.rect_scale *= CardSize / new_card.rect_size
-	$Cards.add_child(new_card)
-	PlayerHand.cardList.erase(PlayerHand.cardList[cardSelected])
+	var new_card = CardBase.instance() # Creates a new instance of card scene
+	cardSelected = randi() % deckSize # picks a random card from the deck
+	new_card.cardName = PlayerHand.cardList[cardSelected] # sets the name of the card
+	AngleVector = Vector2(Horizontal_Radius * cos(angle), - Vertical_Radius * sin(angle)) # angle vector for the arc position
+	new_card.rect_position = CenteredCardOval + AngleVector - new_card.rect_size/2 # applies position
+	new_card.rect_scale *= CardSize / new_card.rect_size # scales rectangle
+	$Cards.add_child(new_card) # appends child to Cards
+	PlayerHand.cardList.erase(PlayerHand.cardList[cardSelected]) # erases the card in the deck
 	deckSize -= 1
 	angle+= 0.1
 	return deckSize
