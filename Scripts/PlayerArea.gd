@@ -29,7 +29,7 @@ func drawCard ():
 	new_card.cardName = PlayerHand.cardList[cardSelected] # sets the name of the card
 	AngleVector = Vector2(Horizontal_Radius * cos(angle), - Vertical_Radius * sin(angle)) # angle vector for the arc position
 	new_card.rect_position = CenteredCardOval + AngleVector - new_card.rect_size/2 # applies position
-	new_card.rect_scale *= CardSize / new_card.rect_size # scales rectangle
+#	new_card.rect_scale *= CardSize / new_card.rect_size # scales rectangle
 	$Cards.add_child(new_card) # appends child to Cards
 	PlayerHand.cardList.erase(PlayerHand.cardList[cardSelected]) # erases the card in the deck
 	deckSize -= 1

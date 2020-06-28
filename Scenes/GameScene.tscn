@@ -1,13 +1,13 @@
 [gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Cards/CardDatabase.gd" type="Script" id=1]
-[ext_resource path="res://Scenes/DeckDraw.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/DeckDraw.gd" type="Script" id=2]
 [ext_resource path="res://Cards/Assets/Backs/PlayingCard.png" type="Texture" id=3]
-[ext_resource path="res://Scenes/PlayerArea.gd" type="Script" id=4]
+[ext_resource path="res://Scripts/PlayerArea.gd" type="Script" id=4]
 [ext_resource path="res://Cards/CardLoader.gd" type="Script" id=5]
 [ext_resource path="res://Cards/Assets/Borders/TestBorder.png" type="Texture" id=6]
-[ext_resource path="res://Scenes/Tiles.gd" type="Script" id=7]
-[ext_resource path="res://Scenes/InspectArea.gd" type="Script" id=8]
+[ext_resource path="res://Scripts/Tiles.gd" type="Script" id=7]
+[ext_resource path="res://Scripts/InspectArea.gd" type="Script" id=8]
 
 [node name="GameScene" type="Node2D"]
 script = ExtResource( 4 )

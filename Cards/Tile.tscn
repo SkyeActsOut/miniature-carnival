@@ -3,14 +3,14 @@
 [ext_resource path="res://Cards/Assets/Backs/PlayingCard.png" type="Texture" id=1]
 
 [node name="MarginContainer" type="MarginContainer"]
-margin_right = 100.0
-margin_bottom = 140.0
-rect_pivot_offset = Vector2( 125, 175 )
+margin_right = 105.0
+margin_bottom = 147.0
+rect_pivot_offset = Vector2( 52, 73 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
-margin_right = 100.0
-margin_bottom = 140.0
+margin_right = 105.0
+margin_bottom = 147.0
 texture = ExtResource( 1 )

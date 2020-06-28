@@ -6,7 +6,8 @@
 [node name="CardBase" type="MarginContainer"]
 margin_right = 350.0
 margin_bottom = 490.0
-rect_pivot_offset = Vector2( 125, 175 )
+rect_pivot_offset = Vector2( 175, 245 )
+mouse_default_cursor_shape = 6
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -24,6 +25,9 @@ centered = false
 [node name="Bars" type="VBoxContainer" parent="Card_Parent"]
 margin_right = 250.0
 margin_bottom = 350.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="TopGap" type="MarginContainer" parent="Card_Parent/Bars"]
 margin_right = 250.0
@@ -187,5 +191,7 @@ rect_min_size = Vector2( 0, 20 )
 [node name="Focus" type="TextureButton" parent="."]
 margin_right = 350.0
 margin_bottom = 490.0
+[connection signal="gui_input" from="Focus" to="." method="_on_Focus_gui_input"]
 [connection signal="mouse_entered" from="Focus" to="." method="_on_Focus_mouse_entered"]
 [connection signal="mouse_exited" from="Focus" to="." method="_on_Focus_mouse_exited"]
+[connection signal="resized" from="Focus" to="." method="_on_Focus_resized"]

@@ -5,7 +5,7 @@ const TileBase = preload ("res://Cards/Tile.tscn")
 var x = 100
 var y = 50
 
-var map = []
+onready var map = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -19,4 +19,12 @@ func _ready():
 			x+= 125
 		y+= 125
 		x = 100
-			
+		
+func isOnTile (pos):
+	for i in range(size):
+		for j in range(size):
+			var posDiff = sqrt(pow(map[i][j].rect_position.x - pos.x, 2) + pow(map[i][j].rect_position.y - pos.y, 2))
+			if (posDiff <= 128):
+				print (str("PLACING ON ", i, " ", j))
+				return map[i][j]
+	return null
