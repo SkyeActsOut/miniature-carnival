@@ -60,8 +60,11 @@ func _ready():
 	
 	set_process(true)
 
+# Resizes the card based on a vector2 size
 func setSize (size):
+	print (str ('resizing to ', size))
 	rect_scale = size / rect_size # Sets the scale to the difference between the desired size and the current size
+	rect_pivot_offset = rect_size * Vector2(0.5, 0.5)
 	# Sets textures to double the desired size (double because the desired size is half of the actual), devided by the texture size
 	$Card_Parent/Border.scale = size*Vector2(2, 2)/$Card_Parent/Border.texture.get_size()
 	$Card_Parent/Card.scale = size*Vector2(2, 2)/$Card_Parent/Card.texture.get_size()
@@ -131,7 +134,7 @@ func _process(delta):
 	elif (!placed):
 		# Checks to see if the card is on any of the tiles
 		if (!isStationary()):
-			var tile = Tiles.isOnTile(rect_position)
+			var tile = Tiles.isOnTile(get_viewport().get_mouse_position())
 			if (tile != null):
 				placeCard(tile)
 			else:
@@ -140,8 +143,10 @@ func _process(delta):
 func placeCard (tile):
 	placed = true
 	setSize(smallCardSize)
-	init_pos = tile.rect_position
-	rect_position = tile.rect_position
+	# Sets the position to the tiles position minus the placed card size they draw from the top left corner
+	init_pos = tile.rect_position - placedCardSize
+	rect_position = tile.rect_position - placedCardSize
+	$Card_Parent.position = Vector2 (0, 0) # Resets the animaiton positiion to 0, 0
 	
 func isStationary ():
 	return init_pos == rect_position || anim || !anim_done
