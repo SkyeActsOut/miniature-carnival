@@ -1,0 +1,94 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Dnynamic_Font/Cello-Sans-Italic.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Networking/Client.gd" type="Script" id=2]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TopMargin" type="MarginContainer" parent="VBoxContainer"]
+margin_right = 1152.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 0, 50 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 54.0
+margin_right = 1152.0
+margin_bottom = 165.0
+
+[node name="LeftMargin" type="MarginContainer" parent="VBoxContainer/Title"]
+margin_right = 100.0
+margin_bottom = 111.0
+rect_min_size = Vector2( 100, 0 )
+
+[node name="Title" type="Label" parent="VBoxContainer/Title"]
+margin_left = 104.0
+margin_right = 840.0
+margin_bottom = 111.0
+custom_fonts/font = ExtResource( 1 )
+text = "Miniture Carnival"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MiddleMargin" type="MarginContainer" parent="VBoxContainer"]
+margin_top = 169.0
+margin_right = 1152.0
+margin_bottom = 169.0
+
+[node name="Login" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 173.0
+margin_right = 1152.0
+margin_bottom = 453.0
+
+[node name="LeftMargin" type="MarginContainer" parent="VBoxContainer/Login"]
+margin_right = 810.0
+margin_bottom = 280.0
+rect_min_size = Vector2( 810, 0 )
+
+[node name="Connect & Disconnect" type="VBoxContainer" parent="VBoxContainer/Login"]
+margin_left = 814.0
+margin_right = 1064.0
+margin_bottom = 280.0
+
+[node name="Connect" type="Button" parent="VBoxContainer/Login/Connect & Disconnect"]
+margin_right = 300.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 250, 50 )
+text = "Connect"
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Login/Connect & Disconnect"]
+margin_top = 54.0
+margin_right = 250.0
+margin_bottom = 104.0
+rect_min_size = Vector2( 0, 50 )
+
+[node name="Disconnect" type="Button" parent="VBoxContainer/Login/Connect & Disconnect"]
+margin_top = 108.0
+margin_right = 300.0
+margin_bottom = 158.0
+rect_min_size = Vector2( 250, 50 )
+text = "Disconnect"
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/Login/Connect & Disconnect"]
+margin_top = 162.0
+margin_right = 250.0
+margin_bottom = 262.0
+rect_min_size = Vector2( 0, 100 )
+
+[node name="Status" type="Label" parent="VBoxContainer/Login/Connect & Disconnect"]
+margin_top = 266.0
+margin_right = 250.0
+margin_bottom = 280.0
+[connection signal="pressed" from="VBoxContainer/Login/Connect & Disconnect/Connect" to="." method="_on_Connect_pressed"]
+[connection signal="pressed" from="VBoxContainer/Login/Connect & Disconnect/Disconnect" to="." method="_on_Disconnect_pressed"]
